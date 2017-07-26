@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplicationMarket.Models.Roles>
+
+@{
+    ViewBag.Title = "ListRoles";
+    Layout = "~/Views/Shared/_ScondLayout.cshtml";
+}
+
+ <!-- jQuery -->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/Role/RoleView.js"></script>
+
+<h2>Роли</h2>
+
+<p>
+    <a href="/Role/Create" class="btn-link">Создать роль</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            <a href="/Role/Create?Id=@item.ID" class="btn-link">Изменить</a>
+            <input type="button" class="btn-link" name="delete" id="deleteRole_@item.ID" onclick="deleteRole(this)" value="Удалить" />
+</td>
+
+</tr>
+}
+
+</table>

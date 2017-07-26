@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_ScondLayout.cshtml";
+}
+
+ <!-- jQuery -->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Вход</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" id="login" placeholder="Логин" name="login" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="password" placeholder="Пароль" name="password" type="password" value="">
+                            </div>
+                            @*<div class="checkbox">
+                                <label>
+                                    <input name="remember" id="IsPersistent" type="checkbox" value="Remember Me">Запомнить аккаунт
+                                </label>
+                            </div>*@
+                            <!-- Change this to a button or input when using this as a form -->
+                            <a href="#" onclick="Autentication()" class="btn btn-lg btn-success btn-block">Войти</a>
+                        </fieldset>
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

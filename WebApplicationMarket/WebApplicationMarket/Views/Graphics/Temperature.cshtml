@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Temperature";
+    Layout = "~/Views/Shared/_ScondLayout.cshtml";
+}
+
+<script src="~/Scripts/Core/core.js"></script>
+
+@*<script src="~/Scripts/Flot/jquery.flot.js"></script>*@
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.flot.spline.js"></script>
+
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.flot.time.js"></script>
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.flot.selection.js"></script>
+
+<script language="javascript" type="text/javascript" src="~/Scripts/Flot/jquery.flot.navigate.js"></script>
+<script src="~/Scripts/Graphics/Temperature.js"></script>
+
+<h2>Графики по температуре</h2>
+
+<div id="graf">
+    <div id="placeholder0" style="width:80%;height:400px;"></div>
+    <div id="placeholder1" style="width:80%;height:400px;"></div>
+    <p class="message"></p>
+
+
+    <div id="placeholder2" style="width:100%;height:400px;"></div>
+    <div id="placeholder3" style="width:80%;height:400px;"></div>
+    @*<div id="placeholder4" style="width:80%;height:400px;"></div>*@
+
+</div>
+

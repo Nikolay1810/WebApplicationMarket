@@ -1,0 +1,25 @@
+﻿
+
+@{
+    ViewBag.Title = "Logs";
+    Layout = "~/Views/Shared/_ScondLayout.cshtml";
+}
+
+ <!-- jQuery -->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/Core/core.js"></script>
+<script src="~/Scripts/Logs/LogsView.js"></script>
+
+<h2>Журнал</h2>
+
+<div id="filter">
+    <select id="filterUser" style="width:20%!important; display:inline-block;" class="form-control  text-danger">
+        <option value="0">All</option>
+    </select>
+    <input type="datetime" class="form-control  text-danger" style="width:20%!important; display:inline-block;" name="startDate" id="startDate" value="" />
+    <input type="datetime" class="form-control  text-danger" style="width:20%!important; display:inline-block;" name="endDate" id="endDate" value="" />
+    <input type="button" class="btn-danger" style="width:10%; height: 35px; vertical-align:middle; border: 1px solid #ccc; border-radius:5px;" onclick="GetTableLogs()" name="find" value="Поиск" />
+</div>
+
+<div id="tableLogs" style="margin-top:40px; margin-bottom:40px;"></div>

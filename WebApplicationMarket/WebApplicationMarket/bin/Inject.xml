@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Inject</name>
+    </assembly>
+    <members>
+        <member name="T:Inject.IInjectContainer">
+            <summary>
+            A dependency injection container that stores type registrations and instances, and creates new types.
+            </summary>
+        </member>
+        <member name="M:Inject.IInjectContainer.Register(System.Type,System.Type)">
+            <summary>
+            Register a type in the container.
+            </summary>
+            <param name="type">The type to register.</param>
+            <param name="resolveType">The type to resolve.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered or <paramref name="resolveType"/> does not derive from <paramref name="type"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> or <paramref name="resolveType"/> is null.</exception>
+        </member>
+        <member name="M:Inject.IInjectContainer.Register(System.Type,System.Object)">
+            <summary>
+            Register an instance in the container.
+            </summary>
+            <param name="type">The type to register.</param>
+            <param name="instance">The instance to resolve.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered or instance is not of the same type as <paramref name="type"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> or <paramref name="instance"/> is null.</exception>
+        </member>
+        <member name="M:Inject.IInjectContainer.Resolve(System.Type)">
+            <summary>
+            Resolve a type and return a concrete instance.
+            </summary>
+            <remarks>
+            If the given type is not registered, the type is constructed using the public constructor.
+            </remarks>
+            <param name="type">The type to resolve.</param>
+            <returns>An instance of the type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/>Type is null.</exception>
+            <exception cref="T:Inject.ResolutionFailedException">A type failed to create or a circular reference is detected.</exception>
+        </member>
+        <member name="T:Inject.InjectContainer">
+            <summary>
+            A dependency injection container that stores type registrations and instances, and creates new types.
+            </summary>
+        </member>
+        <member name="M:Inject.InjectContainer.Register(System.Type,System.Type)">
+            <summary>
+            Register a type in the container.
+            </summary>
+            <param name="type">The type to register.</param>
+            <param name="resolveType">The type to resolve.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered or <paramref name="resolveType"/> does not derive from <paramref name="type"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> or <paramref name="resolveType"/> is null.</exception>
+        </member>
+        <member name="M:Inject.InjectContainer.Register(System.Type,System.Object)">
+            <summary>
+            Register an instance in the container.
+            </summary>
+            <param name="type">The type to register.</param>
+            <param name="instance">The instance to resolve.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered or instance is not of the same type as <paramref name="type"/>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> or <paramref name="instance"/> is null.</exception>
+        </member>
+        <member name="M:Inject.InjectContainer.Resolve(System.Type)">
+            <summary>
+            Resolve a type and return a concrete instance.
+            </summary>
+            <remarks>
+            If the given type is not registered, the type is constructed using the public constructor.
+            </remarks>
+            <param name="type">The type to resolve.</param>
+            <returns>An instance of the type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/>Type is null.</exception>
+            <exception cref="T:Inject.ResolutionFailedException">A type failed to create or a circular reference is detected.</exception>
+        </member>
+        <member name="T:Inject.InjectContainerExtensions">
+            <summary>
+            Extension class that adds a set of convenience overloads to the <see cref="T:Inject.IInjectContainer"/> interface.
+            </summary>
+        </member>
+        <member name="M:Inject.InjectContainerExtensions.Register``2(Inject.IInjectContainer)">
+            <summary>
+            Register a type in the container.
+            </summary>
+            <typeparam name="T">The type to register.</typeparam>
+            <typeparam name="TResolve">The type to resolve.</typeparam>
+            <param name="container">The dependency injection container.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered.</exception>
+        </member>
+        <member name="M:Inject.InjectContainerExtensions.Register``1(Inject.IInjectContainer,``0)">
+            <summary>
+            Register an instance in the container.
+            </summary>
+            <typeparam name="T">The type to register.</typeparam>
+            <param name="container">The dependency injection container.</param>
+            <param name="instance">The instance to resolve.</param>
+            <exception cref="T:System.ArgumentException">Type is already registered.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is null.</exception>
+        </member>
+        <member name="M:Inject.InjectContainerExtensions.Resolve``1(Inject.IInjectContainer)">
+            <summary>
+            Resolve a type and return a concrete instance.
+            </summary>
+            <remarks>
+            If the given type is not registered, the type is constructed using the public constructor.
+            </remarks>
+            <typeparam name="T">The type to resolve.</typeparam>
+            <param name="container">The dependency injection container.</param>
+            <returns>An instance of the type.</returns>
+            <exception cref="T:Inject.ResolutionFailedException">A type failed to create or a circular reference is detected.</exception>
+        </member>
+        <member name="T:Inject.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.Argument_TypeAlreadyRegistered">
+            <summary>
+              Looks up a localized string similar to Type {0} already registered..
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.Argument_TypeShouldInherit">
+            <summary>
+              Looks up a localized string similar to Type {0} does not inherit {1}..
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.ResolutionFailed_CannotCreateInterface">
+            <summary>
+              Looks up a localized string similar to Cannot create non-concrete type {0}..
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.ResolutionFailed_CircularReference">
+             <summary>
+               Looks up a localized string similar to Type: {0} contains a circular reference.
+            Creation path:
+            {1}.
+             </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.ResolutionFailed_CreationError">
+            <summary>
+              Looks up a localized string similar to Exception encountered creating type {0}..
+            </summary>
+        </member>
+        <member name="P:Inject.Properties.Resources.ResolutionFailed_WrongNumberConstructors">
+            <summary>
+              Looks up a localized string similar to Cannot create type {0}. Type must contain only 1 constructor..
+            </summary>
+        </member>
+        <member name="T:Inject.ResolutionFailedException">
+            <summary>
+            The exception that is thrown when a type fails to resolve.
+            </summary>
+        </member>
+        <member name="M:Inject.ResolutionFailedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Inject.ResolutionFailedException"/> class.
+            </summary>
+        </member>
+        <member name="M:Inject.ResolutionFailedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Inject.ResolutionFailedException"/> class with the specifed error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Inject.ResolutionFailedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Inject.ResolutionFailedException"/> class with the specifed error message
+            and a reference to the inner exception that is the cause of the exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The inner exception that is the cause of the exception.</param>
+        </member>
+        <member name="M:Inject.ResolutionFailedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Inject.ResolutionFailedException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplicationMarket.Models.UserResponce>
+@{
+    ViewBag.Title = "AllUsers";
+    Layout = "~/Views/Shared/_ScondLayout.cshtml";
+}
+
+ <!-- jQuery -->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/AllUsers/UserView.js"></script>
+
+<h2>Пользователи</h2>
+<p>
+    <a href="/AllUsers/CreateUser" class="btn-link">Добавить пользователя</a>
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+
+            <td>
+                <a href="/AllUsers/CreateUser?Id=@item.ID" class="btcn-link">Изменить</a>
+                <input type="button" class="btn-link" name="delete" id="deleteUser_@item.ID" onclick="deleteUser(this)" value="Удалить" />
+            </td>
+
+        </tr>
+    }
+
+</table>
